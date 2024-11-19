@@ -1,13 +1,17 @@
 <div class="container">
-  <div class="d-flex justify-content-center">
-    <div class="border-bottom border-3">
-      <h1><%= @article.title %></h1>
-      <%= link_to edit_article_path(@article), class: "text-decoration-none" do %>
+  <div class="d-flex flex-column align-items-center">
+    <div class="d-flex align-items-center border-bottom border-3">
+      <h1 class="px-1"><%= @article.title %></h1>
+      <%= link_to edit_article_path(@article), class: "text-decoration-none px-1" do %>
         <i class="fa-solid fa-pen"></i>
       <% end %>
-      <%= link_to destroy_article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-decoration-none" do %>
+      <%= link_to destroy_article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-decoration-none px-1" do %>
         <i class="fa-solid fa-trash"></i>
       <% end %>
+    </div>
+
+    <div>
+      <%= @article.content %>
     </div>
   </div>
 </div>
